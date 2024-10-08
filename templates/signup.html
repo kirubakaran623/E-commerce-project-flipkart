@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site For Mobile</title>
+    <link rel="icon" href="../static/icons/flipkart-logo-39904.png">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section>
+        <nav id="login-page">
+            <div class="main26">   
+                <img src="../static/icons/login Flipkart.png">
+                <div class="input" href=""><input type="search" placeholder="Search for Products, Brands and More "><i class="fa-solid fa-magnifying-glass"></i></div>
+                <ul>
+                    <li><a class="login" href="{{ url_for('login') }}">Login</a>
+                        <ul class="dropdown">
+                            <li><a id="new" href="#">New Customer? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Sign Up</span></a></li>
+                            <div class="icon">
+                                <li><a href="#"><i class="bi bi-person-circle"></i>MY Profile</a></li>
+                                <li id="plus"><a href="#"><img src="../static/icons/plus_aef8612.png">Flipkart Pluse Zone</a></li>
+                                <li><a href="#"><i class="bi bi-box-seam-fill"></i>Orders</a></li>
+                                <li><a href="#"><i class="bi bi-heart-fill"></i>Wishlists</a></li>
+                                <li><a href="#"><i class="bi bi-gift-fill"></i>Rewards</a></li>
+                                <li><a href="#"><i class="bi bi-credit-card-fill"></i>Gift Cards</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li id="list"><a class="store" href="https://seller.flipkart.com/sell-online?utm_source=fkwebsite&utm_medium=websitedirect">Become a Seller</a></li>
+                    <li id="dot" style="cursor:pointer;"><a class="more">More<i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown2">
+                            <li><a href="https://www.flipkart.com/communication-preferences/push?t=all"><i class="bi bi-bell-fill"></i> &nbsp;Notification Prefrences</a></li>
+                            <li><a href="https://www.flipkart.com/helpcentre"><i class="bi bi-question-square-fill"></i> &nbsp;24X7 Customre Care</a></li>
+                            <li><a href="https://www.flipkart.com/helpcentre"><i class="fa-solid fa-arrow-trend-up"></i> &nbsp;Advertise</a></li>
+                            <li><a href="https://www.flipkart.com/mobile-apps?otracker=ch_vn_mobile_apps"><i class="fa-solid fa-download"></i> &nbsp;Download app</a></li>
+                        </ul>
+                    </li>
+                    <li id="list"><a class="cart" href="https://www.flipkart.com/viewcart?exploreMode=true&preference=FLIPKART"><i class="fa-solid fa-cart-shopping"></i></i>Cart</a></li>
+                </ul>
+            </div>     
+        </nav>
+        <nav id="things-names">
+            <ul>
+                <li><a href="">Electronics<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">TVs & Appliances<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Men<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Women<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Baby & Kids<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Home & Furniture<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Sports, Books & More<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Flights<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="">Offer Zone<i class="fa-solid fa-angle-down"></i></a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <div class="loginpage">
+            <div class="index">
+                <p>Looks like you're new</p>
+                <p>here!</p>
+                <pre>Sign up with your mobile number
+to get started</pre>
+                    <div class="img"><img id="img2" src="../static/login/login_img_c4a81e.png"></div>
+            </div>
+            <div class="formfk">
+                <form autocomplete="on" method="post">
+                    {{form.hidden_tag()}}
+                    <div class="input">
+                        <input autocomplete="off" type="text" {{form.username()}}
+                        <div class="underline"></div>
+                        <label class="label"><span>Enter Name</span></label>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <input autocomplete="off" type="text" {{form.password()}}
+                        <div class="underline"></div>
+                        <label class="label"><span>Enter Mobile number</span></label>
+                    </div>
+                    <div class="term">
+                        By continuing, you agree to Flipkart's
+                        <a href="">Terms of Use</a>
+                        and
+                        <a href="">Privacy Policy.</a>
+                    </div>
+                    <div class="request">
+                        {{form.submit(class="button11")}}
+                        <button id="btnlog"><a href="{{url_for('login')}}">Existing User? Log in</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <footer>
+            <div class="footer">
+                <div id="line">
+                        <ul>
+                            <h4>ABOUT</h4>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="https://corporate.flipkart.net/corporate-home">About Us</a></li>
+                            <li><a href="https://www.flipkartcareers.com/?otracker=${otracker}_navlinks">Careers</a></li>
+                            <li><a href="https://stories.flipkart.com/">Flipkart Stories</a></li>
+                            <li><a href="https://stories.flipkart.com/category/top-stories/news/">Press</a></li>
+                            <li><a href="https://www.flipkart.com/corporate-information">Corporate Information</a></li>
+                        </ul>
+                </div>
+                <div id="line">
+                    <ul>
+                        <h4>GROUP COMPANIES</h4>
+                        <li><a href="https://www.myntra.com/">Myntra</a></li>
+                        <li><a href="https://www.flipkartwholesale.com/">Flipkart Wholesale</a></li>
+                        <li><a href="https://www.cleartrip.com/">Clearstrip</a></li>
+                        <li><a href="https://www.shopsy.in/">Shopsy</a></li>
+                    </ul>
+                </div>
+                <div id="line">
+                    <ul>
+                        <h4>HELP</h4>
+                        <li><a href="https://www.flipkart.com/pages/payments">Payments</a></li>
+                        <li><a href="https://www.flipkart.com/pages/shipping">Shipping</a></li>
+                        <li><a href="https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG">Cancellation & Returns</a></li>
+                        <li><a href="https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG">FAQ</a></li>
+                        <li><a href="https://seller.flipkart.com/page-not-found">Report Infringement</a></li>
+                    </ul>
+                </div>
+                <div class="policy" id="line">
+                    <ul>
+                        <h4>CONSUMER POLICY</h4>
+                        <li><a href="https://www.flipkart.com/pages/returnpolicy?otracker=${otracker}_navlinks">Cancellation & Return</a></li>
+                        <li><a href="https://www.flipkart.com/pages/terms?otracker=${otracker}_navlinks">Trems Of Use</a></li>
+                        <li><a href="https://www.flipkart.com/pages/paymentsecurity?otracker=${otracker}_navlinks">Security</a></li>
+                        <li><a href="">Privacy</a></li>
+                        <li><a href="">Sitemap</a></li>
+                        <li><a href="">Grievance Redressal</a></li>
+                        <li><a href="">EPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <ul>
+                        <h4>Mail Us:</h4>
+                        <li>Flipkart Internet Private Limited,</li>
+                        <li>Buldings Alyssa,Begonia &</li>
+                        <li>Clove Embassy Tech Village,</li>
+                        <li>Outer Ring Rode, Devarabeesanahail Village,</li>
+                        <li>Sitemap</li>
+                        <li>Bengaluru, 560103</li>
+                        <li>Karnataka, India</li>
+                        <h4 class="soci">Social:</h4>
+                        <a href="https://www.facebook.com/flipkart"><i class="bi bi-facebook"></i></a><a href="https://twitter.com/flipkart"><i class="bi bi-twitter-x"></i></a><a href="https://www.youtube.com/flipkart"><i class="bi bi-youtube"></i></a>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <ul>
+                        <h4>Registered Office Address:</h4>
+                        <li>Flipkart Internet Private Limited,</li>
+                        <li>Buldings Alyssa,Begonia &</li>
+                        <li>Clove Embassy Tech Village,</li>
+                        <li>Outer Ring Rode, Devarabeesanahail Village,</li>
+                        <li>Sitemap</li>
+                        <li>Bengaluru, 560103</li>
+                        <li>Karnataka, India</li>
+                        <li>CIN : U51109KA2012PTC066107</li>
+                        <li>Telephone: <span>044-45614700</span>/<span>044-67415800</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer2">
+                <li><a href="https://seller.flipkart.com/?utm_source=fkwebsite&utm_medium=websitedirect"><img src="../static/icons/download (1).svg" alt="">Become a Seller</a></li>
+                <li><a href="https://brands.flipkart.com/"><img src="../static/icons/download (2).svg" alt="">Advertise</a></li>
+                <li><a href="https://www.flipkart.com/the-gift-card-store?otracker=${otracker}_footer_navlinks"><img src="../static/icons/download (3).svg" alt="">Gift Card</a></li>
+                <li><a href="https://www.flipkart.com/helpcentre?otracker=${otracker}_footer_navlinks"><img src="../static/icons/download (4).svg" alt="">Help Center</a></li>
+                <p>© 2007-2024 Flipkart.com</p>
+                <img src="./images/footer/payment methods.svg" alt="Cards">
+            </div>
+        </footer>
+    </section>
+    
+</body>
+</html>

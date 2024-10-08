@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site For Mobile</title>
+    <link rel="stylesheet" href="./media.css">
+    <link rel="icon" href="../static/icons/flipkartlogo.png">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="index-nav">
+        <nav class="main1">
+            <img src="../static/icons/Flipkart_idmH_B14SD_2.png">
+            <div class="input" href=""><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Search for Products, Brands and More "></div>
+            <ul class="drp_down">
+                {% if 'user_name' in session %}
+                <li><a class="login"><i class="bi bi-person-circle"></i>{{ session.user_name }}<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a id="new" href="{{ url_for('signup') }}">New Customer? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <span>Sign Up</span></a></li>
+                        <div>
+                            <li><a href="#"><i class="fa-regular fa-circle-user"></i>MY Profile</a></li>
+                            <li id="plus"><a href="#"><img src="../static/icons/plus zone.png">Flipkart Pluse Zone</a></li>
+                            <li><a href="#"><i class="bi bi-box-seam"></i>Orders</a></li>
+                            <li><a href="#"><i class="fa-regular fa-heart"></i>Wishlists</a></li>
+                            <li><a href="#"><i class="bi bi-gift"></i>Rewards</a></li>
+                            <li><a href="#"><i class="bi bi-credit-card"></i>Gift Cards</a></li>
+                            <li><a href="{{ url_for('logout')}}"><i class="bi bi-box-arrow-left"></i>Logout</a></li>
+                        </div>
+                    </ul>
+                </li>
+                    {% else %}
+                    <li><a class="login" href="{{ url_for('login') }}"><i class="bi bi-person-circle"></i>Login<i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a id="new" href="{{ url_for('signup') }}">New Customer? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <span>Sign Up</span></a></li>
+                            <div>
+                                <li><a href="#"><i class="fa-regular fa-circle-user"></i>MY Profile</a></li>
+                                <li id="plus"><a href="#"><img src="../static/icons/plus zone.png">Flipkart Pluse Zone</a></li>
+                                <li><a href="#"><i class="bi bi-box-seam"></i>Orders</a></li>
+                                <li><a href="#"><i class="fa-regular fa-heart"></i>Wishlists</a></li>
+                                <li><a href="#"><i class="bi bi-gift"></i>Rewards</a></li>
+                                <li><a href="#"><i class="bi bi-credit-card"></i>Gift Cards</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                {% endif %}
+                <li id="list"><a class="cart" href="https://www.flipkart.com/viewcart?exploreMode=true&preference=FLIPKART"><i class="bi bi-cart3"></i>Cart</a></li>
+                <li id="list"><a class="store" href="https://seller.flipkart.com/sell-online?utm_source=fkwebsite&utm_medium=websitedirect"><i class="bi bi-shop-window"></i>Become a Seller</a></li>
+                <li id="dot" style="cursor:pointer;"><i class="bi bi-three-dots-vertical"></i>
+                <ul class="dropdown2">
+                    <li><a href="https://www.flipkart.com/communication-preferences/push?t=all"><i class="bi bi-bell"></i> &nbsp;Notification Prefrences</a></li>
+                    <li><a href="https://www.flipkart.com/helpcentre"><i class="bi bi-headset"></i> &nbsp;24X7 Customre Care</a></li>
+                    <li><a href="https://www.flipkart.com/helpcentre"><i class="bi bi-graph-up-arrow"></i> &nbsp;Advertise</a></li>
+                    <li><a href="https://www.flipkart.com/mobile-apps?otracker=ch_vn_mobile_apps"><i class="bi bi-download"></i> &nbsp;Download app</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <div class="main2">
+            <div>
+                <img src="../static/images/grocery (1).png" alt="things">
+                <p>Grocery</p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (2).png" alt="things">
+                <p>Mobiles</p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (3).png" alt="things">
+                <p>Fashion <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (4).png" alt="things">
+                <p>Electronics <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (5).png" alt="things">
+                <p>Home and Fruniture <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (6).png" alt="things">
+                <p>Appliances</p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (7).png" alt="things">
+                <p>Travel</p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (8).png" alt="things">
+                <p>Beauty, Toy and More <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+            <div>
+                <img src="../static/images/grocery (9).png" alt="things">
+                <p>Two Wheelers <i class="fa-solid fa-angle-down"></i></p>
+            </div>
+        </div>
+    </section>
+    <div class="main3">
+        <figure>
+        <img src="../static/images/travel  (1).jpg">
+        <img src="../static/images/travel  (3).jpg" alt="">
+        <img src="../static/images/travel  (5).jpg" alt="">
+        <img src="../static/images/travel  (8).png" alt="">
+        <img src="../static/images/travel  (7).png" alt="">
+        <img src="../static/images/travel  (1).jpg">
+        </figure>
+    </div>
+    <div class="icon">
+        <i class="fa-solid fa-angle-left"></i>
+        <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <div class="mobile">
+        <p class="p">Brand New Mobiles</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="mob">
+            <div class="img">
+                <a href="{{url_for('mobile')}}"><img src="../static/images/smart phones/smartphone (1).jpeg" alt="electronics">
+                <p>Motorola Edge 50 Pro 5G</p>
+                <h5>From ₹31,999*</h5></a>
+            </div>
+            <div class="img">
+                <img src="../static/images/smart phones/smartphone (2).jpeg" alt="electronics">
+                <p>Poco M6 Pro 5G</p>
+                <h5>From ₹8,999*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/smart phones/smartphone (3).jpeg" alt="electronics">
+                <p>Galaexy F15 5G</p>
+                <h5>From ₹10,999*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/smart phones/smartphone (4).jpeg" alt="electronics">
+                <p>Realme P1 5G</p>
+                <h5>Just ₹14,999*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/smart phones/smartphone (5).jpeg" alt="electronics">
+                <p>Realme 12X 5G</p>
+                <h5>From ₹14,999*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/smart phones/smartphone (6).jpeg" alt="electronics">
+                <p>Vivo T3X 5G</p>
+                <h5>From ₹12,499*</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main4">
+        <p class="p">Best of Electronics</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="main5">
+            <div class="img">
+                <img src="../static/images/electronics (1).jpg" alt="electronics">
+                <p>Noise Smartwatches</p>
+                <h5>From ₹1,099</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/electronics (2).jpeg" alt="electronics">
+                <p>Redmi Android Moniter</p>
+                <h5>From ₹15,999</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/electronics (3).jpeg" alt="electronics">
+                <p>boAT Smartwatches</p>
+                <h5>From ₹1,099</h5>
+            </div>
+            <div class="img" id="speaker">
+                <img src="../static/images/electronics (4).jpeg" alt="electronics">
+                <p>Best Selling Mobile Speak..</p>
+                <h5>From ₹499</h5>
+            </div>
+            <div class="img" id="camera">
+                <img class="camera" src="../static/images/electronics (5).jpeg" alt="electronics">
+                <p>Top Mirrorless Cameras</p>
+                <h5>Shop Now!</h5>
+            </div>
+            <div class="img" id="camera">
+                <img src="../static/images/electronics (6).jpeg" alt="electronics">
+                <p>Brand new laptop!</p>
+                <h5>Shop Now!</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main6">
+        <p class="p">Beauty, Food, Toys & More</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="main7">
+            <div class="img2" id="cycle">
+                <img src="../static/images/toys (1).jpeg" alt="electronics">
+                <p>Electrical Cycle</p>
+                <h5>Up to 40% Off</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/toys (2).jpeg" alt="electronics">
+                <p>Gym Essential</p>
+                <h5>From ₹149</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/toys (3).jpeg" alt="electronics">
+                <p>Best Action toys</p>
+                <h5>Up to 70% Off</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/toys (4).jpeg" alt="electronics">
+                <p>Remote Control Toys</p>
+                <h5>Up to 80% Off</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/toys (5).jpeg" alt="electronics">
+                <p>Top selling stationery</p>
+                <h5>From  ₹49</h5>
+            </div>
+            <div class="img3" id="car">
+                <img src="../static/images/toys (6).jpeg" alt="electronics">
+                <p>Top selling stationery</p>
+                <h5>From  ₹49</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main10">
+        <div class="summer-special">
+            <p>Latest Summer Style</p>
+            <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+            <div class="main8">
+                <div class="div">
+                    <img src="../static/images/summer syles (1).jpeg" alt="">
+                    <p>Men's T-Shirts</p>
+                    <h4>Special Offers</h4>
+                </div>
+                <div class="div2">
+                    <img src="../static/images/summer syles (2).jpeg" alt="">
+                    <p>Men's Slides</p>
+                    <h4>Min. 50% Offers</h4>
+                </div>
+            </div>
+            <div class="main9">
+                <div class="div3">
+                    <img src="../static/images/summer syles (3).jpeg" alt="">
+                    <p>Men's Cap</p>
+                    <h4>Min. 50% Offers</h4>
+                </div>
+                <div class="div4">
+                    <img src="../static/images/summer syles (4).jpeg" alt="">
+                    <p>Men's Bag</p>
+                    <h4>New Collection</h4>
+                </div>
+            </div>
+        </div>
+        <div class="main11">
+            <img>
+        </div>
+    </div>
+    <div class="main12">
+        <div><img src="../static/images/discounts (1).jpg" alt=""></div>
+        <div><img src="../static/images/discounts (2).jpg" alt=""></div>
+        <div><img src="../static/images/discounts (3).jpg" alt=""></div>
+    </div>
+    <div class="main13">
+        <p class="p">Best Fashion Brand For You!</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="main14">
+            <div class="img4">
+                <img class="Badi" src="../static/images/fashion (1).jpeg" alt="electronics">
+                <p>Sabse Badi Deals</p>
+                <h5>Min 70% Off</h5>
+            </div>
+            <div class="img4" id="shoe">
+                <img src="../static/images/fashion (2).jpeg" alt="electronics">
+                <p>Mens Footwear</p>
+                <h5>Min 70% Off</h5>
+            </div>
+            <div class="img4" id="belt">
+                <img src="../static/images/fashion (3).jpeg" alt="electronics">
+                <p>KSRV Wallet & Belt...</p>
+                <h5>Min 56% Off</h5>
+            </div>
+            <div class="img4">
+                <img src="../static/images/fashion (4).jpeg" alt="electronics">
+                <p>Woven. Temple Bord...</p>
+                <h5>Min 70% Off</h5>
+            </div>
+            <div class="img4">
+                <img src="../static/images/fashion (5).jpeg" alt="electronics">
+                <p>Vera Moda. ONLY..AND...</p>
+                <h5>60-80% Off</h5>
+            </div>
+            <div class="img4">
+                <img src="../static/images/fashion (6).jpeg" alt="electronics">
+                <p>Metrounet, Andrenex...</p>
+                <h5>Under ₹349/-</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main15">
+        <p class="p">Best Fashion Brand For You!</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="main16">
+            <div class="Esswntial" id="bottels">
+                <img src="../static/images/Home&kitchen Essential (1).jpeg" alt="electronics">
+                <p>Bottels</p>
+                <h5>Upto 70% Off</h5>
+            </div>
+            <div class="Esswntial" >
+                <img src="../static/images/Home&kitchen Essential (2).jpeg" alt="electronics">
+                <p>Flasks</p>
+                <h5>From ₹299</h5>
+            </div>
+            <div class="Esswntial">
+                <img src="../static/images/Home&kitchen Essential (3).jpeg" alt="electronics">
+                <p>Dinner Sets</p>
+                <h5>From ₹219</h5>
+            </div>
+            <div class="Esswntial">
+                <img src="../static/images/Home&kitchen Essential (4).jpeg" alt="electronics">
+                <p>Casseroles</p>
+                <h5>From ₹249</h5>
+            </div>
+            <div class="Esswntial" id="basket">
+                <img src="../static/images/Home&kitchen Essential (5).jpeg" alt="electronics">
+                <p>Laundry Baskets</p>
+                <h5>From ₹129</h5>
+            </div>
+            <div class="Esswntial">
+                <img src="../static/images/Home&kitchen Essential (6).jpeg" alt="electronics">
+                <p>Carpet Rugs</p>
+                <h5>From ₹99</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main17">
+        <img src="../static/images/debit card offer/debit card (1).jpg" alt="">
+        <img src="../static/images/debit card offer/debit card (2).jpg" alt="">
+        <img src="../static/images/debit card offer/debit card (3).jpg" alt="">
+        <img src="../static/images/debit card offer/debit card (4).jpg" alt="">
+    </div>
+    <div class="main18">
+        <div class="Travel">
+            <p>Travel Essential Picks</p>
+            <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+            <div class="main19">
+                <div class="di">
+                    <img src="../static/images/New folder/travel essential  (1).jpeg" alt="">
+                    <p>Toothpast</p>
+                    <h4>Min. 20% Off</h4>
+                </div>
+                <div class="di2">
+                    <img src="../static/images/New folder/travel essential  (2).jpeg" alt="">
+                    <p>Men's Slides</p>
+                    <h4>Min. 50% Offers</h4>
+                </div>
+            </div>
+            <div class="main20">
+                <div class="di3">
+                    <img src="../static/images/New folder/travel essential  (3).jpeg" alt="">
+                    <p>Duffel Bags</p>
+                    <h4>Min. 70% Offers</h4>
+                </div>
+                <div class="di4">
+                    <img src="../static/images/New folder/travel essential  (4).jpeg" alt="">
+                    <p>Headset</p>
+                    <h4>Min. 50% Off</h4>
+                </div>
+            </div>
+        </div>
+        <div class="Trending">
+            <p>Trending Gaddets & Appliances</p>
+            <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+            <div class="main21">
+                <div class="Trend">
+                    <img src="../static/images/New folder/trending (1).jpeg" alt="">
+                    <p>Men's T-Shirts</p>
+                    <h4>Special Offers</h4>
+                </div>
+                <div class="Trend2">
+                    <img src="../static/images/New folder/trending (4).jpeg" alt="">
+                    <p>Men's Slides</p>
+                    <h4>Min. 50% Offers</h4>
+                </div>
+            </div>
+            <div class="main22">
+                <div class="Trend3">
+                    <img src="../static/images/New folder/trending (3).jpeg" alt="">
+                    <p>Men's Cap</p>
+                    <h4>Min. 50% Offers</h4>
+                </div>
+                <div class="Trend4">
+                    <img src="../static/images/New folder/trending (2).jpeg" alt="">
+                    <p>Men's Bag</p>
+                    <h4>New Collection</h4>
+                </div>
+            </div>
+        </div>
+        <div class="need">
+            <img>
+        </div>
+    </div>
+    <div class="main23">
+        <img class="offer" src="../static/images/offers/offers (1).jpeg" alt="">
+        <img class="offer" src="../static/images/offers/offers (2).png" alt="">
+        <img class="offer" src="../static/images/offers/offers (3).png" alt="">
+    </div>
+    <div class="Mattresses">
+        <p class="p">Furniture & Mattresses</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="mat">
+            <div class="img">
+                <img src="../static/images/furniture/furniture (1).jpeg" alt="electronics">
+                <p>Mattresses</p>
+                <h5>From ₹2,990*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/furniture/furniture (2).jpeg" alt="electronics">
+                <p>Tv Units</p>
+                <h5>From ₹1,249*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/furniture/furniture (3).jpeg" alt="electronics">
+                <p>Shoe Racks</p>
+                <h5>From ₹199*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/furniture/furniture (4).jpeg" alt="electronics">
+                <p>Hammock & Swings</p>
+                <h5>From ₹299*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/furniture/furniture (5).jpeg" alt="electronics">
+                <p>Wardrobes</p>
+                <h5>From ₹4,999*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/furniture/furniture (6).jpeg" alt="electronics">
+                <p>Inflatable sofas</p>
+                <h5>From ₹499*</h5>
+            </div>
+        </div>
+    </div>
+    <div class="Deals">
+        <p class="p">Top Deals On Appliances</p>
+        <a href=""><i class="fa-solid fa-angle-right" id="right"></i></a>
+        <div class="Top">
+            <div class="img">
+                <img src="../static/images/home applianceses/appliances (1).jpeg" alt="electronics">
+                <p>Top Deals On Washing Ma...</p>
+                <h5>Shop Now!</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/home applianceses/appliances (2).jpeg" alt="electronics">
+                <p>Limited Period Deals</p>
+                <h5>From ₹9,990*</h5>
+            </div>
+            <div class="img">
+                <img src="../static/images/home applianceses/appliances (3).jpeg" alt="electronics">
+                <p>Fans & Cooler</p>
+                <h5>From ₹990*</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/home applianceses/appliances (4).jpeg" alt="electronics">
+                <p>New Lanches</p>
+                <h5>From ₹6,299*</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/home applianceses/appliances (5).jpeg" alt="electronics">
+                <p>Best Deals On ACs</p>
+                <h5>From ₹2,499/m*</h5>
+            </div>
+            <div class="img2">
+                <img src="../static/images/home applianceses/appliances (6).jpeg" alt="electronics">
+                <p>Home Essential</p>
+                <h5>Shop Now!</h5>
+            </div>
+        </div>
+    </div>
+    <div class="main24">
+        <img src="../static/images/offers/new offers (1).jpg" alt="">
+        <img src="../static/images/offers/new offers (2).jpg" alt="">
+        <img src="../static/images/offers/new offers (3).jpg" alt="">
+    </div>
+    <div class="main24">
+        <img src="../static/images/offers/new offers (4).jpg" alt="">
+        <img src="../static/images/offers/new offers (5).jpg" alt="">
+        <img src="../static/images/offers/new offers (6).jpg" alt="">
+    </div>
+    <div class="main24">
+        <img src="../static/images/offers/new offers (7).jpg" alt="">
+        <img src="../static/images/offers/new offers (8).jpg" alt="">
+        <img src="../static/images/offers/new offers (9).jpg" alt="">
+    </div>
+    <div class="main24">
+        <img src="../static/images/offers/new offers (10).jpg" alt="">
+        <img src="../static/images/offers/new offers (11).jpg" alt="">
+        <img src="../static/images/offers/new offers (12).jpeg" alt="">
+    </div>
+    <div class="main25">
+        <h4>Top Stories : Brand Directory</h4>
+        <pre><span> MOST SEARCHED FOR ON FLIPKART:</span> iPhone 15 | iPhone 15 Plus | iPhone 15 Pro Blue | iPhone 15 Pro Black | iPhone 15 Pro Max Blue | iPhone 15 Pro Max Black | Vivo x 100 | Spoyl Store | SAMSUNG Flip5 | SAMSUNG 
+ Fold5 | Flipkart Axis Bank Super Elite Credit card | 5G Mobile Phones | Primebook Laptops | Moto Edge 40 | Grievance Redressal | OPPO Reno7 Pro 5G | iPhone 13 | Help Centre | Track Orders | Manage Orders | Return Orders | Gift
+ Cards Store | Flipkart Axis Bank Credit Card | Pay Later
+
+ <span>MOBILES</span> Redmi 12 5G | Realme 12+ 5G | Motorola G84 | Realme C53 | Infinix Smart 8 | Samsung Galaxy S23 5G | Samsung Galaxy S21 FE 5G Qualcomm | vivo V30 | Samsung Galaxy S24 5G | Samsung Galaxy S24+ 5G | iPhone
+ x12 64GB | iPhone 12 Pro 512GB | iPhone 12 128GB | Vivo Y15 | SAMSUNG Galaxy S21 FE 5G | Infinix HOT 301 | Realme 10 Pro 5G | MOTOROLA G62 5G | Nothing Phone | REDMI Note 12 Pro 5G | Infinix SMART 7 | Vivo Y12 | Oppo
+ A12 | Motorola 5g Phone | Realme 5g Smartphone | Apple 5g Phone | Iqoo 5g Phones | Oneplus 5g Phones | Vivo 5g Phones | Oppo 5g Smart Phones | Oppo F15 | Oppo A31 | Samsung A71 | Samsung A51 | Samsung A31 | iPhone
+ 11 | iPhone 11 Pro | 4G Mobile | Nokia Mobile | Samsung Mobile | iphone | Oppo Mobile | Vivo Mobile
+
+<span>CAMERA</span> GoPro Action Camera | Nikon Camera | Canon Camera | Sony Camera | Canon DSLR | Nikon DSLR
+
+<span>LAPTOPS</span> Asus ROG Ally | MacBook Pro M2 | Premium Laptop | ASUS ROG Strix SCAR 16 (2023) Core i9 13th Gen | ASUS ROG Zephyrus M16 (2023) Core i9 13th Gen | ASUS Zenbook 14 OLED (2022) | Realme Book Prime Core i5
+11th Gen | Microsoft Surface Go Pentium 128GB | Apple Laptops | Acer Laptops | Lenovo Laptops | Dell Laptops | Asus Laptops | HP Laptops | Gaming Laptops | 2 in 1 Laptops | Laptops | Dell latest laptops 2022 | HP latest laptops
+2022 | Infinix INBook Y1 Plus | SAMSUNG Galaxy Book3 | 12th Gen Intel Core Laptops
+
+<span>TVS</span> Nokia TV | Panasonic TV | Thomson TV | Mi X Pro | Realme TV | Motorola TV | OnePlus TVs | LG TV | TV | Sony TV | Samsung TV | Android Television | Iffalcon Tv | Mi TV
+
+<span>LARGE APPLIANCES:</span> Television | Washing Machines | Refrigerators | Air Conditioners | Electric Cookers | Electric Jug (Heater) / Travel Kettles | Induction Cooktops | Inverters / stabilizer | Irons / Iron Box | Mixer Grinder
+Juicer | Wet Grinders | Chimneys | Microwave Ovens | Vacuum Cleaners | Water Purifier | Fan
+
+<span>CLOTHING</span> Green bridal lehenga | Tops | Shoes | Sunglasses | Bridal Blouse | Half saree blouse designs | Designer blouses | Blouse designs | Shirts | Cotton saree blouse designs | Tshirts | Jeans | Sarees | Dresses | One
+pieces | Groom wedding sherwani | Designer Salwar Suits | Bra | Cotton simple blouse designs | Banarasi saree blouse designs | Stylish blouse astin design | Track Pant | Blouse neck designs | Kurtas | Party Dresses | Palazzo
+Suits | Anarkali | Gowns | Cut out dress | Salwar Suits | Kurtis | Designer Sarees | Leggings | Shorts | Georgette Sarees | Ethnic Wear | uppada pattu sarees | Blouse back design | Jodhpur pants
+
+<span>FOOTWEAR:</span> Adidas Shoes | Reebok Shoes | Nike Shoes | Puma Shoes | Boots | Bata Shoes | Woodland Shoes | Skechers Shoes | Sneakers | Womens Boots | Sports Shoes | Loafers | Sandals | Lotto Sports Shoes | Casual
+Shoes Womens Skechers Shoes | Asics Sports Shoes | Formal Shoes | School Shoes
+
+<span>GROCERIES</span> PhonePe Grocery Voucher | Hand Wash | Soap | Cashew Nuts | Sunflower Oil | Eggs | Toilet Cleaner | Harpic Toilet Cleaner | Dettol Soap | Mustard Oil | Biscuits | Cheese | Patanjali Atta | Fortune Oil | Aashirvaad
+Atta | Tea
+
+<span>BEST SELLING ON FLIPKART</span> Headphones | Best Gas Geyser | Kitchen Geyser | Nutri Blenders | Portable Air Cooler | Best Air Cooler | Bags | Hitachi Refrigerator 3 Door | Books | Toys | Candles | Helmets | Wall Clocks | Baby
+Food Chocolates Cycles | Calculators | Lipsticks | Mask | Vertiv UPS | Fastrack Watches | Wallets | Earrings | Gold Coins | Realme Pad Mini | Handbags | conekt SW2 Smartwatch | Mivi DuoPods a350 | Speaker Cleaner
+
+<span>FURNITURE</span> Furniture | Sofas | Beds | Dining sets | Wardrobes | Mattresses | TV Units | Tables | Chairs | Shelves | Bean Bags | Office Chairs | Computer Table | Office Tables | Red Sofa | WakefitBeds | White Sofa | Wakefit
+Mattress | Green Sofa | Black Sofa | Brown Sofa
+
+</span>BGMH:</span> Whey Protein | Homeopathy | Cricket | Cycles | Footballs | Treadmills | Christmas Gifts | Fitness Accessories | Online Guitar | Books Store | Musical Instrument Store | Dabur Chyawanprash | Baidyanath
+Chyawanprash | Energy Drinks | Toys | Milk Drink Mixes | Rakhi | Chyawanprash | Indian Flag | Protein Supplements</pre>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="">
+                    <ul>
+                        <h4>ABOUT</h4>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="https://corporate.flipkart.net/corporate-home">About Us</a></li>
+                        <li><a href="https://www.flipkartcareers.com/?otracker=${otracker}_navlinks">Careers</a></li>
+                        <li><a href="https://stories.flipkart.com/">Flipkart Stories</a></li>
+                        <li><a href="https://stories.flipkart.com/category/top-stories/news/">Press</a></li>
+                        <li><a href="https://www.flipkart.com/corporate-information">Corporate Information</a></li>
+                    </ul>
+            </div>
+            <div class="">
+                <ul>
+                    <h4>GROUP COMPANIES</h4>
+                    <li><a href="https://www.myntra.com/">Myntra</a></li>
+                    <li><a href="https://www.flipkartwholesale.com/">Flipkart Wholesale</a></li>
+                    <li><a href="https://www.cleartrip.com/">Clearstrip</a></li>
+                    <li><a href="https://www.shopsy.in/">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="">
+                <ul>
+                    <h4>HELP</h4>
+                    <li><a href="https://www.flipkart.com/pages/payments">Payments</a></li>
+                    <li><a href="https://www.flipkart.com/pages/shipping">Shipping</a></li>
+                    <li><a href="https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG">Cancellation & Returns</a></li>
+                    <li><a href="https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG">FAQ</a></li>
+                    <li><a href="https://seller.flipkart.com/page-not-found">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="policy">
+                <ul>
+                    <h4>CONSUMER POLICY</h4>
+                    <li><a href="https://www.flipkart.com/pages/returnpolicy?otracker=${otracker}_navlinks">Cancellation & Return</a></li>
+                    <li><a href="https://www.flipkart.com/pages/terms?otracker=${otracker}_navlinks">Trems Of Use</a></li>
+                    <li><a href="https://www.flipkart.com/pages/paymentsecurity?otracker=${otracker}_navlinks">Security</a></li>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Sitemap</a></li>
+                    <li><a href="">Grievance Redressal</a></li>
+                    <li><a href="">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="mail">
+                <ul>
+                    <h4>Mail Us:</h4>
+                    <li>Flipkart Internet Private Limited,</li>
+                    <li>Buldings Alyssa,Begonia &</li>
+                    <li>Clove Embassy Tech Village,</li>
+                    <li>Outer Ring Rode, Devarabeesanahail Village,</li>
+                    <li>Sitemap</li>
+                    <li>Bengaluru, 560103</li>
+                    <li>Karnataka, India</li>
+                    <h4 class="soci">Social:</h4>
+                    <a href="https://www.facebook.com/flipkart"><i class="bi bi-facebook"></i></a><a href="https://twitter.com/flipkart"><i class="bi bi-twitter-x"></i></a><a href="https://www.youtube.com/flipkart"><i class="bi bi-youtube"></i></a>
+                </ul>
+            </div>
+            <div class="mail">
+                <ul>
+                    <h4>Registered Office Address:</h4>
+                    <li>Flipkart Internet Private Limited,</li>
+                    <li>Buldings Alyssa,Begonia &</li>
+                    <li>Clove Embassy Tech Village,</li>
+                    <li>Outer Ring Rode, Devarabeesanahail Village,</li>
+                    <li>Sitemap</li>
+                    <li>Bengaluru, 560103</li>
+                    <li>Karnataka, India</li>
+                    <li>CIN : U51109KA2012PTC066107</li>
+                    <li>Telephone: <span>044-45614700</span>/<span>044-67415800</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer2">
+            <li><a href="https://seller.flipkart.com/?utm_source=fkwebsite&utm_medium=websitedirect"><i class="bi bi-shop-window"></i>Become a Seller</a></li>
+            <li><a href="https://brands.flipkart.com/"><i class="bi bi-graph-up-arrow"></i>Advertise</a></li>
+            <li><a href="https://www.flipkart.com/the-gift-card-store?otracker=${otracker}_footer_navlinks"><i class="bi bi-gift"></i>Gift Card</a></li>
+            <li><a href="https://www.flipkart.com/helpcentre?otracker=${otracker}_footer_navlinks"><i class="bi bi-question-circle"></i>Help Center</a></li>
+            <p>© 2007-2024 Flipkart.com</p>
+            <img src="../static/images/footer/payment methods.svg" alt="Cards">
+        </div>
+    </footer>
+</body>
+</html>
